@@ -1,0 +1,22 @@
+.boton{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color:#000000 ;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #129029;
+    z-index: 100;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    transition: ease all 0.3s
+    
+}
+.boton:hover{
+    background-color: rgb(16, 110, 54);
+    transform: scale(1.2);
+}
