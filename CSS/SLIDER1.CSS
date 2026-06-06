@@ -1,0 +1,105 @@
+/* --- Base y Paleta --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fondo negro puro */
+}
+
+/* --- Sección del Slider --- */
+.ticker-section {
+    background-color: #000000;
+    padding: 30px 0; /* Espaciado vertical */
+    border-top: 1px solid #1a1a1a; /* Borde sutil para integrar */
+    border-bottom: 1px solid #1a1a1a;
+    overflow: hidden; /* Importante: oculta el texto que sale de la vista */
+    width: 100%;
+}
+
+.ticker-wrap {
+    width: 100%;
+    display: flex;
+}
+
+/* --- Pista que se mueve (Infinito) --- */
+.ticker-track {
+    display: flex;
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    align-items: center;
+    /* La animación mueve la pista completa. Ajusta el tiempo (20s) para velocidad */
+    animation: ticker-move 20s linear infinite;
+}
+
+/* --- Estilo del Texto (Inspirado en image_1.png) --- */
+.ticker-phrase {
+    color: #ffffff; /* Tu blanco para el texto */
+    /* Usamos una fuente muy gruesa y compacta para imitar la imagen */
+    font-family:Arial, Helvetica, sans-serif; 
+    font-weight: 80;
+    font-size:xx-large;
+    /* Reducimos el espacio entre letras para el look compacto de la imagen */
+    letter-spacing: 0;
+    margin: 0 15px; /* Espacio mínimo lateral */
+}
+
+/* --- Icono Corazón de Audio (Recreación CSS de image_1.png en Morado) --- */
+.music-heart {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #8a2be2; /* Tu morado eléctrico */
+    margin: 0 40px; /* Espacio grande alrededor del icono */
+    border-radius: 50%;
+    /* Efecto de resplandor morado para elegancia */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+/* Recreación de las ondas de audio del corazón con pseudoelementos */
+.music-heart::before,
+.music-heart::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+}
+
+.music-heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.music-heart::after {
+    left: 15px;
+    top: 0;
+}
+
+/* Gira el cuadrado para formar el corazón */
+.music-heart {
+    transform: rotate(-45deg);
+}
+
+/* --- Animación Infinita Sin JS --- */
+@keyframes ticker-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Se mueve exactamente la mitad de la pista (el contenido 1), 
+           revelando el contenido 2 en el mismo lugar, creando el bucle. */
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Ajuste Responsivo (Móvil) --- */
+@media (max-width: 768px) {
+    .ticker-phrase {
+        font-size: 50px; /* Texto más pequeño en móviles */
+    }
+    .music-heart {
+        width: 40px;
+        height: 40px;
+    }
+    .music-heart::before { top: -10px; }
+    .music-heart::after { left: 10px; }
+}

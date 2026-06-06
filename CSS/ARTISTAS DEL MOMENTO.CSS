@@ -1,0 +1,170 @@
+/* --- Configuración General --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000000; /* Fondo negro puro */
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Sección Artistas --- */
+.artists-section {
+    padding: 80px 0;
+    background-color: #000000;
+}
+
+/* --- Título (Respetando tus colores) --- */
+.section-title {
+    color: #ffffff; /* Blanco */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Detalle morado al lado del título */
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 100%;
+    background-color: #8a2be2; /* Tu morado característico */
+    border-radius: 5px;
+}
+
+/* --- Fila Horizontal de Tarjetas (Como en la imagen) --- */
+.artists-grid {
+    display: flex;
+    gap: 20px; /* Espacio entre tarjetas */
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+    padding-bottom: 20px; /* Espacio para la barra de desplazamiento */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* Personalización de la barra de desplazamiento (Scrollbar) */
+.artists-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.artists-grid::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Fondo de la barra */
+    border-radius: 10px;
+}
+
+.artists-grid::-webkit-scrollbar-thumb {
+    background: #333; /* Color por defecto */
+    border-radius: 10px;
+}
+
+.artists-grid::-webkit-scrollbar-thumb:hover {
+    background: #8a2be2; /* Cambia a morado al pasar el mouse */
+}
+
+/* --- Estilo de la Tarjeta Individual --- */
+.artist-card {
+    flex: 0 0 200px; /* Ancho fijo de cada tarjeta, no se encoge */
+    background-color: #121212; /* Gris muy oscuro, como en la imagen */
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/* Efecto Hover en la tarjeta completa */
+.artist-card:hover {
+    transform: translateY(-10px); /* Elevación */
+    background-color: #1a1a1a; /* Un poco más claro */
+    border-color: #8a2be2; /* Borde morado sutil */
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2); /* Resplandor morado */
+}
+
+/* --- Contenedor de Imagen y Superposición --- */
+.image-container {
+    width: 100%;
+    padding-bottom: 100%; /* Mantiene la imagen cuadrada */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Capa de reproducción que aparece en Hover (Como en la imagen_2.png) */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(138, 43, 226, 0.6); /* Fondo morado transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .play-overlay {
+    opacity: 1; /* Muestra el icono en hover */
+}
+
+/* --- Información del Artista --- */
+.artist-info h3 {
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap; /* Evita que el nombre salte de línea */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade "..." si el nombre es muy largo */
+}
+
+.artist-info p {
+    color: #a7a7a7; /* Gris claro */
+    font-size: 14px;
+}
+
+/* --- Ajustes Móviles --- */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .artist-card {
+        flex: 0 0 160px; /* Tarjetas más pequeñas en móvil */
+        padding: 10px;
+    }
+    
+    .artist-info h3 {
+        font-size: 14px;
+    }
+    
+    .artist-info p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,99 @@
+/* --- Estilos Generales --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000000; /* Fondo negro puro */
+    overflow-x: hidden;
+}
+
+/* --- Contenedor de la Sección --- */
+.world-music-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+    /* Animación de entrada similar al menú */
+    animation: fadeInSlide 1.2s ease-out forwards;
+}
+
+/* --- Títulos --- */
+.main-title {
+    color: #ffffff; /* Blanco */
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.main-title span {
+    color: #8a2be2; /* Tu morado característico */
+}
+
+.sub-title {
+    color: #b3b3b3; /* Gris claro para elegancia */
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+/* --- Fila de Avatares --- */
+.avatars-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Adaptable a móviles */
+}
+
+.avatar-card {
+    width: 110px;
+    height: 110px;
+    background-color: #121212; /* Negro ligeramente gris para resaltar */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333; /* Borde sutil inicial */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.avatar-card img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Efecto Hover --- */
+.avatar-card:hover {
+    transform: scale(1.15) translateY(-10px);
+    border-color: #8a2be2; /* Resalta en morado al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+}
+
+/* --- Animación de Entrada --- */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Adaptabilidad Móvil --- */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 32px;
+    }
+    
+    .avatar-card {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .avatars-row {
+        gap: 15px;
+    }
+}

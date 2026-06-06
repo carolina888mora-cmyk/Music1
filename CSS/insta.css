@@ -1,0 +1,22 @@
+.botoni{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 85px;
+    background-color:#000000 ;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #b214da;
+    z-index: 100;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    transition: ease all 0.3s
+    
+}
+.botoni:hover{
+    background-color: #b214da;
+    transform: scale(1.2);
+}
