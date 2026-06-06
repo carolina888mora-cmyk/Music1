@@ -1,0 +1,136 @@
+/* --- Sección About Us (Estilo Premium Oscuro) --- */
+.about-us-section {
+    background-color: #000000; /* Fondo negro puro de tu plataforma */
+    padding: 80px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 200px;
+}
+
+/* Contenedor flexible de doble columna */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Separación elegante entre imagen y texto */
+}
+
+/* --- Columna de la Imagen --- */
+.about-image-side {
+    flex: 1;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Detalle geométrico morado detrás de la imagen para dar profundidad */
+.purple-accent-geometry {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background-color: #8a2be2; /* Tu morado característico */
+    bottom: -15px;
+    left: -15px;
+    z-index: -1;
+    border-radius: 8px;
+    opacity: 0.35;
+    filter: blur(8px);
+}
+
+/* --- Columna del Texto --- */
+.about-text-side {
+    flex: 1.2;
+}
+
+/* Pequeña etiqueta superior */
+.section-badge {
+    color: #8a2be2;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Título Principal */
+.about-text-side h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Resalte en la palabra "US" usando tu color corporativo */
+.highlight-purple {
+    color: #8a2be2;
+}
+
+/* Contenedor de párrafos */
+.about-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Párrafo introductorio destacado */
+.about-paragraphs .lead-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #e0e0e0; /* Blanco suavizado para lectura cómoda */
+    font-weight: 500;
+}
+
+/* Párrafo secundario */
+.about-paragraphs p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #a7a7a7; /* Gris suave tipo Deezer */
+}
+
+/* Línea decorativa inferior derecha inspirada en tu mockup */
+.brand-divider-line {
+    width: 120px;
+    height: 4px;
+    background-color: #8a2be2;
+    margin-top: 40px;
+    border-radius: 2px;
+}
+
+/* --- Adaptabilidad (Responsive) --- */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column; /* Pasa a formato de una sola columna en pantallas medianas/chicas */
+        gap: 45px;
+        text-align: center;
+    }
+    
+    .about-image-side {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .about-text-side h2 {
+        font-size: 34px;
+    }
+
+    .brand-divider-line {
+        margin: 30px auto 0 auto; /* Centra la línea decorativa en móviles */
+    }
+}
